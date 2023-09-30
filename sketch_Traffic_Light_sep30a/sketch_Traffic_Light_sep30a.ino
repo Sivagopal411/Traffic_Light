@@ -1,22 +1,19 @@
-int seven_seg_digits[10][8] = {  { 0,0,0,0,0,0,0,1 },  // = 0 -->(A,B,dp,C,D,E,F,G)
-                                 { 1,0,0,0,1,1,1,1 },  // = 1
-                                 { 0,0,0,1,0,0,1,0 },  // = 2
-                                 { 0,0,0,0,0,1,1,0 },  // = 3
-                                 { 1,0,0,0,1,1,0,0 },  // = 4
-                                 { 0,1,0,0,0,1,0,0 },  // = 5
-                                 { 0,1,0,0,0,0,0,0 },  // = 6
-                                 { 0,0,0,0,1,1,1,1 },  // = 7
-                                 { 0,0,0,0,0,0,0,0 },  // = 8
-                                 { 0,0,0,0,0,1,0,0 }   // = 9
+int seven_seg_digits[10][8] = {  { 0,0,0,0,0,0,0,1 },  // = 0 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 1,0,0,0,1,1,1,1 },  // = 1 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,0,0,1,0,0,1,0 },  // = 2 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,0,0,0,0,1,1,0 },  // = 3 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 1,0,0,0,1,1,0,0 },  // = 4 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,1,0,0,0,1,0,0 },  // = 5 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,1,0,0,0,0,0,0 },  // = 6 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,0,0,0,1,1,1,1 },  // = 7 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,0,0,0,0,0,0,0 },  // = 8 -->Seg(A,B,dp,C,D,E,F,G)output level
+                                 { 0,0,0,0,0,1,0,0 }   // = 9 -->Seg(A,B,dp,C,D,E,F,G)output level
                                  };
 int segCount=8,pin,Num,seg;
 
-
-
-
-int red = 13;
-int yellow = 12;
-int green = 11;
+int red     = 13;       //RED Light Port
+int yellow  = 12;       //Yellow Light Port
+int green   = 11;       //Green Light Port
 
 void setup(){
     // put your setup code here, to run once:
@@ -31,13 +28,13 @@ void setup(){
   
   pinMode(red, OUTPUT);
   pinMode(yellow, OUTPUT);
-  pinMode(green,  OUTPUT);
-  
+  pinMode(green,  OUTPUT);  
 }
-void loop(){
 
-  digitalWrite(red, HIGH);
- // put your main code here, to run repeatedly:
+void loop(){
+  // put your main code here, to run repeatedly:
+
+  digitalWrite(red, HIGH);    //RED Light On for 10 sec 
   for(Num=0;Num<10;Num++){
   sevenSegWrite(Num);
   delay(1000);
@@ -45,9 +42,7 @@ void loop(){
   digitalWrite(red,  LOW);
 
 
-   //digitalWrite(yellow, HIGH);
- // put your main code here, to run repeatedly:
-  for(Num=0;Num<4;Num++){  
+  for(Num=0;Num<4;Num++){     // Yellow Light On for 4 secs(500ms On, 500ms Off)
   sevenSegWrite(Num);
   digitalWrite(yellow, HIGH);
   delay(500);
@@ -56,8 +51,7 @@ void loop(){
   }
 
 
-   digitalWrite(green, HIGH);
- // put your main code here, to run repeatedly:
+  digitalWrite(green, HIGH);    //Green Light On for 10 sec
   for(Num=0;Num<10;Num++){
   sevenSegWrite(Num);
   delay(1000);
@@ -65,7 +59,7 @@ void loop(){
   digitalWrite(green,  LOW);
 
 
-for(Num=0;Num<4;Num++){  
+  for(Num=0;Num<4;Num++){     // Yellow Light On for 4 secs(500ms On, 500ms Off)
   sevenSegWrite(Num);
   digitalWrite(yellow, HIGH);
   delay(500);
@@ -73,11 +67,7 @@ for(Num=0;Num<4;Num++){
   delay(500);
   
   }
-  //digitalWrite(yellow,  LOW);
-  
-
 }
-
 
 
 void sevenSegWrite(unsigned int digit) {
@@ -85,6 +75,4 @@ void sevenSegWrite(unsigned int digit) {
     {
       digitalWrite(pin,seven_seg_digits[digit][seg]);
     }
-
-
 }
