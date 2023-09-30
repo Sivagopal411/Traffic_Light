@@ -1,3 +1,22 @@
+int red     = 13;       //RED Light Port
+int yellow  = 12;       //Yellow Light Port
+int green   = 11;       //Green Light Port
+
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green,  OUTPUT);  
+
+void setup(){
+    // put your setup code here, to run once:
+  pinMode(2, OUTPUT); //A
+  pinMode(3, OUTPUT); //B
+  pinMode(4, OUTPUT); //dp
+  pinMode(5, OUTPUT); //C
+  pinMode(6, OUTPUT); //D
+  pinMode(7, OUTPUT); //E
+  pinMode(8, OUTPUT); //F
+  pinMode(9, OUTPUT); //G
+
 int seven_seg_digits[10][8] = {  { 0,0,0,0,0,0,0,1 },  // = 0 -->Seg(A,B,dp,C,D,E,F,G)output level
                                  { 1,0,0,0,1,1,1,1 },  // = 1 -->Seg(A,B,dp,C,D,E,F,G)output level
                                  { 0,0,0,1,0,0,1,0 },  // = 2 -->Seg(A,B,dp,C,D,E,F,G)output level
@@ -11,24 +30,6 @@ int seven_seg_digits[10][8] = {  { 0,0,0,0,0,0,0,1 },  // = 0 -->Seg(A,B,dp,C,D,
                                  };
 int segCount=8,pin,Num,seg;
 
-int red     = 13;       //RED Light Port
-int yellow  = 12;       //Yellow Light Port
-int green   = 11;       //Green Light Port
-
-void setup(){
-    // put your setup code here, to run once:
-  pinMode(2, OUTPUT); //A
-  pinMode(3, OUTPUT); //B
-  pinMode(4, OUTPUT); //dp
-  pinMode(5, OUTPUT); //C
-  pinMode(6, OUTPUT); //D
-  pinMode(7, OUTPUT); //E
-  pinMode(8, OUTPUT); //F
-  pinMode(9, OUTPUT); //G
-  
-  pinMode(red, OUTPUT);
-  pinMode(yellow, OUTPUT);
-  pinMode(green,  OUTPUT);  
 }
 
 void loop(){
