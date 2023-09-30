@@ -1,0 +1,22 @@
+git branch => Total branches
+
+git checkout <branch name> => To switch branch
+
+git checkout -b <branch name> => To create new branch
+
+git pull Sivagopal411 Traffic_Light
+
+git ls-files
+
+git rm <file_name>
+
+git merge <Future Branch>
+
+git add <filename>
+
+git commit -m "message"
+
+git push <remote> <branch>
+
+git push <pr-repo.git> <your-local-branch-name>:<pr-branch-name>
+	git push https://github.com/Sivagopal411/Traffic_Light.git Traffic_Light:Traffic_Light_Delay
